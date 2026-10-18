@@ -338,7 +338,8 @@ button { font: inherit; color: inherit; }
   font-family: var(--font-display); font-weight: 700;
 }
 .hide-photos .avatar .initials { width: 100%; height: 100%; font-size: 34px; }
-.hide-photos .photo .initials { width: 100%; aspect-ratio: 4 / 5; font-size: clamp(72px, calc(var(--page-w) * .3), 130px); }
+.hide-photos .photo .initials { width: 100%; aspect-ratio: 4 / 5; font-size: clamp(44px, calc(var(--page-w) * .15), 64px); }
+.hide-photos .photo .placeholder { outline: 2px dashed rgba(22, 38, 59, .3); outline-offset: -14px; }
 .photo figcaption {
   text-align: center; font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--ink-soft);
 }
@@ -562,7 +563,7 @@ button { font: inherit; color: inherit; }
           <section class="page right">
             <figure class="photo">
               <img src="images/zizi-photo.jpg" alt="Zizi resting her chin on her hand in a restaurant booth">
-              <span class="initials" aria-hidden="true">ZS</span>
+              <span class="initials placeholder" aria-hidden="true">headshot</span>
               <figcaption>hi, I'm Zizi</figcaption>
             </figure>
             <span class="folio">p. 01</span>
