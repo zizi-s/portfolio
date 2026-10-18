@@ -328,6 +328,17 @@ button { font: inherit; color: inherit; }
   gap: 4px;
 }
 .photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+/* photo-free mode: initials stand in for the portraits */
+.initials { display: none; }
+.hide-photos .avatar img, .hide-photos .photo img { display: none; }
+.hide-photos .initials {
+  display: grid; place-items: center;
+  background: var(--cover);
+  color: var(--cover-ink);
+  font-family: var(--font-display); font-weight: 700;
+}
+.hide-photos .avatar .initials { width: 100%; height: 100%; font-size: 34px; }
+.hide-photos .photo .initials { width: 100%; aspect-ratio: 4 / 5; font-size: clamp(72px, calc(var(--page-w) * .3), 130px); }
 .photo figcaption {
   text-align: center; font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--ink-soft);
 }
@@ -485,10 +496,11 @@ button { font: inherit; color: inherit; }
 <body>
 <!-- /site-head -->
 
-<div class="desk" id="desk">
+<!-- remove "hide-photos" to show the portrait photos again -->
+<div class="desk hide-photos" id="desk">
   <aside class="sidebar" aria-label="About Zizi">
     <div class="id">
-      <div class="avatar"><img src="images/zizi-avatar.jpg" alt="Portrait of Zizi Shao"></div>
+      <div class="avatar"><img src="images/zizi-avatar.jpg" alt="Portrait of Zizi Shao"><span class="initials" aria-hidden="true">ZS</span></div>
       <h1>Zixuan Shao <span>“Zizi”</span></h1>
       <ul class="roles">
         <li>Product Designer</li>
@@ -550,6 +562,7 @@ button { font: inherit; color: inherit; }
           <section class="page right">
             <figure class="photo">
               <img src="images/zizi-photo.jpg" alt="Zizi resting her chin on her hand in a restaurant booth">
+              <span class="initials" aria-hidden="true">ZS</span>
               <figcaption>hi, I'm Zizi</figcaption>
             </figure>
             <span class="folio">p. 01</span>
